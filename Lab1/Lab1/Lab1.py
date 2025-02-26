@@ -1,0 +1,70 @@
+# -*- coding: cp1251 -*-
+year = int(input("¬ведите год: "))
+
+if year % 400 == 0 or year % 4 == 0 :
+    print("YES")
+elif (year % 100 == 0):
+    print("NO")
+else:
+    print("NO")
+
+#2
+def print_penguin():
+    penguin = [
+    "       _~_" ,
+    "     ( o o )",
+    "    /   V   \ ",
+    "   / (  _  ) \ ",
+    "      ^^ ^^"
+    ]
+    return penguin
+
+n = int(input("¬ведите число от 1 до 9: "))
+
+if 1 <= n <= 9:
+    penguin_lines = print_penguin()
+    
+    for line in penguin_lines:
+        print((line + " ") * n)
+else:
+    print("¬ведите число от 1 до 9.")
+
+#3
+ostring = input("¬ведите строку: ")
+
+nstring = ""
+for char in ostring:
+    nstring += char + "*"
+
+
+if nstring:
+    nstring = nstring[:-1]
+
+print("–езультат:", nstring)
+
+#4
+import re
+
+ip_address = input("¬ведите IP-адрес: ")
+
+pattern = r'^((25[0-5]|(2[0-4][0-9])|([01]?[0-9][0-9]?))\.){3}(25[0-5]|(2[0-4][0-9])|([01]?[0-9][0-9]?))$'
+
+if re.match(pattern, ip_address):
+    print("YES")
+else:
+    print("NO")
+
+#5
+import re
+
+def is_palindrome(s):   
+    cleaned = re.sub(r'[^a-zA-Zа-€ј-я0-9]', '', s.lower())
+    
+    return cleaned == cleaned[::-1]
+
+phrase = input("¬ведите фразу: ")
+
+if is_palindrome(phrase):
+    print("YES")
+else:
+    print("NO")
